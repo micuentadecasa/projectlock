@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres:
+    build: ./apps/postgresql
+    env_file:
+      - ./apps/postgresql/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  openproject:
+    build: ./apps/openproject
+    env_file:
+      - ./apps/openproject/.env
+    ports:
+      - "8080:8080"
+
+  autogen_panel:
+    build: ./apps/autogen_panel
+    env_file:
+      - ./apps/autogen_panel/.env
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

@@ -1,0 +1,6 @@
+requests      # For making HTTP requests to OpenProject API
+psycopg2      # PostgreSQL adapter for Python
+panel         # For creating the interactive web app dashboards
+holoviews     # For data visualization, works great with Panel
+bokeh         # Dependency for Panel and Holoviews for making graphs
+autogen       # Assuming there's a package for Autogen; if not, URL to git
